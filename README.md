@@ -8,9 +8,9 @@ Unused code detection modeled after David Schnepper's talk (https://www.youtube.
     require 'travis/feierabend/redis_storage'
 
     Travis::Feierabend.configure { Travis::Feierabend::RedisStorage.new }
-    Travis::Feierabend.place('2016-07-01/old-smelly-code')
+    Travis::Feierabend.place('2016-07-01/no-longer-needed-code')
 
-    Travis::Feierabend.list_in_use('2016-07-01/old-smelly-code')
+    Travis::Feierabend.list_in_use('2016-07-01/no-longer-needed-code')
 
 ## install
 
