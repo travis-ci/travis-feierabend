@@ -4,7 +4,7 @@ Unused code detection modeled after David Schnepper's talk (https://www.youtube.
 
 Finding unused code can be difficult. Especially in highly dynamic environments, where it is harder to make static assurances about what is in use.
 
-Feierabend allows you to place markers on code that you believe is no longer in use, and run that in production. If that code path gets executed, a backtrace is stored to redis, allowing you to see exactly what is using it.
+Feierabend allows you to deprecated markers on code that you believe is no longer in use, and run that in production. If that code path gets executed, a backtrace is stored to redis, allowing you to see exactly what is using it.
 
 By following a convention of including a date in the label (though some `git blame` magic could do the same) it becomes possible to filter markers by age, giving you increasing confidence that code can be cleaned up.
 
@@ -23,7 +23,7 @@ Here's an out-of-context Dijkstra quote for good measure:
 
 ### Form hypothesis on unused code
 
-    Travis::Feierabend.place('2016-07-01/no-longer-needed-code')
+    Travis::Feierabend.deprecated('2016-07-01/no-longer-needed-code')
 
 ### Verify or refute hypothesis
 

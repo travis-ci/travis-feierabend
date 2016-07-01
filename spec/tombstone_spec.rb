@@ -2,14 +2,14 @@ require 'travis/feierabend'
 require 'travis/feierabend/memory_storage'
 require 'travis/feierabend/redis_storage'
 
-RSpec.describe Travis::Feierabend, "#place" do
+RSpec.describe Travis::Feierabend, "#deprecated" do
   context "memory storage" do
     before {
       Travis::Feierabend.configure { Travis::Feierabend::MemoryStorage.new }
     }
 
     it "stores a refutation" do
-     Travis::Feierabend.place('2016-07-01/test-case')
+     Travis::Feierabend.deprecated('2016-07-01/test-case')
      expect(Travis::Feierabend.get_refutations('2016-07-01/test-case').count).to be(1)
    end
   end
@@ -25,7 +25,7 @@ RSpec.describe Travis::Feierabend, "#place" do
     }
 
     it "stores a refutation" do
-     Travis::Feierabend.place('2016-07-01/test-case')
+     Travis::Feierabend.deprecated('2016-07-01/test-case')
      expect(Travis::Feierabend.get_refutations('2016-07-01/test-case').count).to be(1)
    end
   end

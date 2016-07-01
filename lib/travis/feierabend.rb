@@ -8,7 +8,7 @@ module Travis
       @storage = storage
     end
 
-    def place(label, meta={})
+    def deprecated(label, meta={})
       data = {
         trace: Kernel.caller_locations.join("\n"),
         meta: meta,
@@ -38,8 +38,8 @@ module Travis
         @instance ||= Feierabend.new(storage)
       end
 
-      def place(label, meta={})
-        instance.place(label, meta)
+      def deprecated(label, meta={})
+        instance.deprecated(label, meta)
       end
 
       def list_in_use(label)
