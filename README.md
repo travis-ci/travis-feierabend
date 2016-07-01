@@ -14,11 +14,18 @@ Here's an out-of-context Dijkstra quote for good measure:
 
 ## Usage
 
+### Setup
+
     require 'travis/feierabend'
     require 'travis/feierabend/redis_storage'
 
     Travis::Feierabend.configure { Travis::Feierabend::RedisStorage.new }
+
+### Form hypothesis on unused code
+
     Travis::Feierabend.place('2016-07-01/no-longer-needed-code')
+
+### Verify or refute hypothesis
 
     Travis::Feierabend.list_in_use('2016-07-01/no-longer-needed-code')
 
