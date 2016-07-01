@@ -38,6 +38,11 @@ Here's an out-of-context Dijkstra quote for good measure:
 
     $ make
 
+## TODO
+
+* method that recursively traverses a code base and its dependencies searching for `Feierabend.deprecated` in files and then using a ruby parser to extract the label from the line -- as well as calculating which line it was on
+* publish gem
+
 ## License
 
 MIT
