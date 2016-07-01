@@ -1,4 +1,4 @@
-# travis-feierabend
+# travis-feierabend [![Build Status](https://travis-ci.org/travis-ci/travis-feierabend.svg?branch=master)](https://travis-ci.org/travis-ci/travis-feierabend)
 
 Unused code detection modeled after David Schnepper's talk (https://www.youtube.com/watch?v=29UXzfQWOhQ).
 
