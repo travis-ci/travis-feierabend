@@ -28,6 +28,7 @@ Here's an out-of-context Dijkstra quote for good measure:
 ### Verify or refute hypothesis
 
     Travis::Feierabend.list_in_use('2016-07-01/no-longer-needed-code')
+    #=> [{trace: "...", meta: nil}, ...]
 
 ## Installation
 
