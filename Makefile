@@ -5,3 +5,7 @@ test:
 .PHONY: install
 install:
 	bundle install
+
+.PHONY: build
+build:
+	bundle exec gem build travis-feierabend.gemspec

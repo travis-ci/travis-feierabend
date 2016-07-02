@@ -21,6 +21,42 @@ Here's an out-of-context Dijkstra quote for good measure:
 
     Travis::Feierabend.configure { Travis::Feierabend::RedisStorage.new }
 
+### Using Deprecations
+The Deprecations refinement enables 2 methods for deprecating methods in classes or modules. It creates the warnings for the user. Examples:
+```ruby
+class ExampleClass
+  using Travis::Feierabend::Deprecations
+
+  def expiring_method
+    puts "I'm not going to be around much longer!"
+  end
+  deprecate :expiring_method, expiration_date: "June 4th 2017", new_method_name: 'not_expiring_method'
+end
+```
+```
+ > ExampleClass.new.expiring_method
+[DEPRECATION] 'expiring_method' is deprecated. Please use 'not_expiring_method' instead. expiring_method with no longer work after June 4th 2017
+I'm not going to be around much longer!
+ => nil
+```
+
+```ruby
+class ExampleClass
+  using Travis::Feierabend::Deprecations
+
+  def awesome_new_method
+    puts "Hello World!"
+  end
+  replace_method :expiring_method, :awesome_new_method
+end
+```
+```
+> ExampleClass.new.expiring_method
+[DEPRECATION] 'expiring_method' is no longer availible. Using 'awesome_new_method' instead.
+Hello World!
+ => nil
+```
+
 ### Form hypothesis on unused code
 
     Travis::Feierabend.deprecated('2016-07-01/no-longer-needed-code')

@@ -1,7 +1,7 @@
 require 'redis'
 
 module Travis
-  class Feierabend
+  module Feierabend
     class RedisStorage
       attr_reader :redis
 

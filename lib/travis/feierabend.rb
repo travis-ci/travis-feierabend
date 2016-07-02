@@ -1,7 +1,11 @@
+require 'travis/feierabend/deprecations'
+require 'travis/feierabend/memory_storage'
+require 'travis/feierabend/redis_storage'
+
 require 'json'
 
 module Travis
-  class Feierabend
+  module Feierabend
     attr_reader :storage
 
     def initialize(storage)

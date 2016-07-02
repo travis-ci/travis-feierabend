@@ -1,5 +1,5 @@
 module Travis
-  class Feierabend
+  module Feierabend
     class MemoryStorage
       def initialize
         @in_use = {}
